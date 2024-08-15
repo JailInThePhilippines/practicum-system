@@ -1,0 +1,57 @@
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="container mt-5">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-4 text-center">
+      <img class="image" src="assets/gclogo.png" alt="Logo 1" />
+    </div>
+    <div class="col-md-4 text-center">
+      <img id="slogo" src="assets/practiEaseLogo.png" alt="Logo 1" />
+    </div>
+    <div class="col-md-4 text-center mr-md-2">
+      <img class="image" src="assets/ccsLogo.png" alt="Logo 1" />
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <div class="text-center mt-3">
+          <h4 class="text-success">Admin</h4>
+        </div>
+        <div class="card-body">
+          <form (submit)="onSubmit()">
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control mb-3"
+                id="email"
+                [(ngModel)]="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                [(ngModel)]="password"
+                name="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-outline-success w-100 mt-3">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

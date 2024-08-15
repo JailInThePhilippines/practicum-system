@@ -1,0 +1,79 @@
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.calendar .today {
+  background-color: #ffcc00;
+  /* Adjust styles as needed */
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.nav-button {
+  background-color: transparent;
+  color: green; /* Bootstrap's primary color */
+  border: 1px solid green; /* Border color */
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: green;
+  color: #fff; /* Text color on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .calendar-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendar-header span {
+    margin: 10px 0;
+  }
+
+  .calendar th,
+  .calendar td {
+    padding: 5px;
+  }
+
+  .nav-button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar th,
+  .calendar td {
+    padding: 3px;
+    font-size: 12px;
+  }
+
+  .nav-button {
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+
+  /* Hide navigation buttons on smaller screens */
+  .nav-button {
+    display: none;
+  }
+}

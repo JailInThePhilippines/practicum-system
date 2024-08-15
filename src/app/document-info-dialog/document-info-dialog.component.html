@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Document Information</h1>
+<div mat-dialog-content>
+  <p *ngFor="let requirement of data.instructor_requirements" class="text-dark text-center">
+    {{ getRequirementStatus(requirement, 'resume_status', 'Resume') }}<br>
+    {{ getRequirementStatus(requirement, 'application_status', 'Application Letter') }}<br>
+    {{ getRequirementStatus(requirement, 'consent_status', 'Parent Consent') }}<br>
+    {{ getRequirementStatus(requirement, 'endorsement_status', 'Endorsement Letter') }}<br>
+    {{ getRequirementStatus(requirement, 'acceptance_status', 'Acceptance Letter') }}<br>
+    {{ getRequirementStatus(requirement, 'sportsfest_status', 'OJT Documentation') }}<br>
+    {{ getRequirementStatus(requirement, 'ccs_status', 'Activities Documentation') }}<br>
+    {{ getRequirementStatus(requirement, 'seminar_status', 'Trainings/Seminars') }}<br>
+    {{ getRequirementStatus(requirement, 'moa_status', 'MOA (Only if required by the student\'s company)') }}
+  </p>
+  <p class="text-dark text-end mt-3"><b>Total Cleared: {{ getClearedCount(data.instructor_requirements[0]) }}/8</b></p>
+</div>

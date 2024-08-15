@@ -1,0 +1,175 @@
+<div class="container mt-5">
+  <div class="">
+    <div class="">
+      <div class="vertical-cards">
+        <div class="card-container">
+          <mat-card class="student-card" (click)="toggleStudentContent()">
+            <mat-card-content>
+              <h4 class="card-title">Student Count</h4>
+              <hr />
+              <p class="card-text">
+                <b>Total Students: {{ studentCount }}</b>
+              </p>
+            </mat-card-content>
+          </mat-card>
+          <div class="card-content mt-3" *ngIf="showStudentContent">
+            <div class="table-responsive">
+              <table class="table" *ngIf="students.length > 0">
+                <thead>
+                  <tr>
+                    <th>SSID</th>
+                    <th>Name</th>
+                    <th>School ID</th>
+                    <th>Email</th>
+                    <th>Mobile Number</th>
+                    <th>Block</th>
+                    <th>Program</th>
+                    <th>Year</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let student of students">
+                    <td>{{ student.user_id }}</td>
+                    <td>{{ student.student_name }}</td>
+                    <td>{{ student.school_id }}</td>
+                    <td>{{ student.student_email }}</td>
+                    <td>{{ student.student_mobile_number }}</td>
+                    <td>{{ student.block }}</td>
+                    <td>{{ student.program }}</td>
+                    <td>{{ student.student_year }}</td>
+                    <td>
+                      <button class="btn btn-danger btn-sm" (click)="deleteStudent(student)">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <mat-card class="instructor-card" (click)="toggleInstructorContent()">
+            <mat-card-content>
+              <h4 class="card-title">Instructor Count</h4>
+              <hr />
+              <p class="card-text">
+                <b>Total Instructors: {{ instructorCount }}</b>
+              </p>
+            </mat-card-content>
+          </mat-card>
+          <div class="card-content mt-3" *ngIf="showInstructorContent">
+            <div class="table-responsive">
+              <table class="table" *ngIf="instructors.length > 0">
+                <thead>
+                  <tr>
+                    <th>ISID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Block Handled</th>
+                    <th>Program Handled</th>
+                    <th>Year Handled</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let instructor of instructors">
+                    <td>{{ instructor.instructor_id }}</td>
+                    <td>{{ instructor.instructor_name }}</td>
+                    <td>{{ instructor.instructor_email }}</td>
+                    <td>{{ instructor.block_handled }}</td>
+                    <td>{{ instructor.program_handled }}</td>
+                    <td>{{ instructor.year_handled }}</td>
+                    <td>
+                      <button class="btn btn-danger btn-sm" (click)="deleteInstructor(instructor)">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <mat-card class="employer-card" (click)="toggleEmployerContent()">
+            <mat-card-content>
+              <h4 class="card-title">Employer Count</h4>
+              <hr />
+              <p class="card-text">
+                <b>Total Employers: {{ employerCount }}</b>
+              </p>
+            </mat-card-content>
+          </mat-card>
+          <div class="card-content mt-3" *ngIf="showEmployerContent">
+            <div class="table-responsive">
+              <table class="table" *ngIf="employers.length > 0">
+                <thead>
+                  <tr>
+                    <th>ESID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Company Name</th>
+                    <th>Position of Employer</th>
+                    <th>Company Number</th>
+                    <th>Company Address</th>
+                    <th>Company Email</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let employer of employers">
+                    <td>{{ employer.employer_id }}</td>
+                    <td>{{ employer.employer_name }}</td>
+                    <td>{{ employer.employer_email }}</td>
+                    <td>{{ employer.company_name }}</td>
+                    <td>{{ employer.employer_position }}</td>
+                    <td>{{ employer.company_number }}</td>
+                    <td>{{ employer.company_address }}</td>
+                    <td>{{ employer.company_email }}</td>
+                    <td>
+                      <button class="btn btn-danger btn-sm" (click)="deleteEmployer(employer)">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <mat-card class="linkedaccounts-card" (click)="toggleLinkedAccountsContent()">
+            <mat-card-content>
+              <h4 class="card-title">Linked Accounts Count</h4>
+              <hr />
+              <p class="card-text">
+                <b>Total Accounts Linked: {{ linkedAccountsCount }}</b>
+              </p>
+            </mat-card-content>
+          </mat-card>
+          <div class="card-content mt-3" *ngIf="showLinkedAccountsContent">
+            <div class="table-responsive">
+              <table class="table" *ngIf="linkedAccounts.length > 0">
+                <thead>
+                  <tr>
+                    <th>Student Name</th>
+                    <th>Employer Name</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let linkedAccount of linkedAccounts">
+                    <td>{{ linkedAccount.student_name }}</td>
+                    <td>{{ linkedAccount.employer_name }}</td>
+                    <td>
+                      <button class="btn btn-danger btn-sm" (click)="deleteLinkedAccount(linkedAccount)">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

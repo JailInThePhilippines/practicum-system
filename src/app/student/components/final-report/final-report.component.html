@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <div class="h4 text-success">Final Report</div>
+  <hr />
+</div>
+
+<div class="container">
+  <h4 class="text-dark"><b>You may upload here your OJT Final Report Documentation.</b></h4>
+</div>
+
+<div class="container mt-5">
+  <mat-card>
+    <mat-tab-group>
+      <mat-tab label="Final Report">
+        <div>
+          <input 
+            type="file" 
+            accept="application/pdf" 
+            (change)="onFileUpload($event)" 
+            multiple 
+            [disabled]="isAnyFileCleared()" 
+          />
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>
+
+<div class="container mt-5 upload">
+  <h4 class="text-dark"><b>Uploaded Files</b></h4>
+  <hr>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="fileUploaded">
+      <mat-header-cell *matHeaderCellDef> File Uploaded </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="report_status">
+      <mat-header-cell *matHeaderCellDef> Report Status </mat-header-cell>
+      <mat-cell *matCellDef="let element" [ngClass]="getDocumentStatusClass(element.report_status)"> {{ element.report_status }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button 
+          mat-icon-button 
+          color="warn" 
+          (click)="deleteFile(element)" 
+          [disabled]="element.report_status === 'Cleared'"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </table>
+</div>

@@ -1,0 +1,229 @@
+<div class="container mt-5">
+  <div class="h4 text-success">
+    Exit Poll
+    <img src="assets/accomplishments.png" alt="accomplishment" />
+  </div>
+  <hr />
+</div>
+
+<div class="container mt-5">
+
+  <form (ngSubmit)="onSubmit()" #exitPollForm="ngForm">
+    <div class="mb-3">
+      <label for="student_name" class="form-label">Student Name</label>
+      <input type="text" class="form-control" id="student_name" name="student_name" [(ngModel)]="exitPollData.student_name" [disabled]="isSubmitted && !isEditing" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="course_and_year" class="form-label">Course and Year</label>
+      <input type="text" class="form-control" id="course_and_year" name="course_and_year" [(ngModel)]="exitPollData.course_and_year" [disabled]="isSubmitted && !isEditing" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="name_of_company" class="form-label">Name of Company</label>
+      <input type="text" class="form-control" id="name_of_company" name="name_of_company" [(ngModel)]="exitPollData.name_of_company" [disabled]="isSubmitted && !isEditing" required>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="assigned_position" class="form-label">Assigned Position</label>
+      <input type="text" class="form-control" id="assigned_position" name="assigned_position" [(ngModel)]="exitPollData.assigned_position" [disabled]="isSubmitted && !isEditing" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="department" class="form-label">Department</label>
+      <input type="text" class="form-control" id="department" name="department" [(ngModel)]="exitPollData.department" [disabled]="isSubmitted && !isEditing" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="job_description" class="form-label">Job Description</label>
+      <textarea class="form-control" id="job_description" name="job_description" [(ngModel)]="exitPollData.job_description" [disabled]="isSubmitted && !isEditing" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="supervisor_name" class="form-label">Supervisor Name</label>
+      <input type="text" class="form-control" id="supervisor_name" name="supervisor_name" [(ngModel)]="exitPollData.supervisor_name" [disabled]="isSubmitted && !isEditing" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="ojt_duration" class="form-label">OJT Duration</label>
+      <input type="text" class="form-control" id="ojt_duration" name="ojt_duration" [(ngModel)]="exitPollData.ojt_duration" [disabled]="isSubmitted && !isEditing" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="total_hours" class="form-label">Total Hours</label>
+      <input type="number" class="form-control" id="total_hours" name="total_hours" [(ngModel)]="exitPollData.total_hours" [disabled]="isSubmitted && !isEditing" required>
+    </div>
+
+    <div class="mb-3">
+      <p><b>1. Relate your OJT Experience with the following OJT Standards/Criteria.</b></p>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>Response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>My scope of work is directly related to the academic program I am pursuing</td>
+          <td>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="work_related_yes" name="work_related_to_academic_program" [value]="1" [(ngModel)]="exitPollData.work_related_to_academic_program" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="work_related_yes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="work_related_no" name="work_related_to_academic_program" [value]="0" [(ngModel)]="exitPollData.work_related_to_academic_program" [disabled]="isSubmitted && !isEditing">
+
+              <label class="form-check-label" for="work_related_no">No</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>I was given an orientation on the company organization and operations</td>
+          <td>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="orientation_yes" name="orientation_on_company_organization" [value]="1" [(ngModel)]="exitPollData.orientation_on_company_organization" [disabled]="isSubmitted && !isEditing">
+
+              <label class="form-check-label" for="orientation_yes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="orientation_no" name="orientation_on_company_organization" [value]="0" [(ngModel)]="exitPollData.orientation_on_company_organization" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="orientation_no">No</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>I was given a job description on my specific duties and reporting relationships</td>
+          <td>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="description_yes" name="given_job_description" [value]="1" [(ngModel)]="exitPollData.given_job_description" [disabled]="isSubmitted && !isEditing">
+
+              <label class="form-check-label" for="description_yes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="description_no" name="given_job_description" [value]="0" [(ngModel)]="exitPollData.given_job_description" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="description_no">No</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>My office/work hours were clear and convenient for me</td>
+          <td>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="convenient_yes" name="work_hours_clear" [value]="1" [(ngModel)]="exitPollData.work_hours_clear" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="convenient_yes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="convenient_no" name="work_hours_clear" [value]="0" [(ngModel)]="exitPollData.work_hours_clear" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="convenient_no">No</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>I felt safe and secure in my work location and environment</td>
+          <td>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="safe_yes" name="felt_safe_and_secure" [value]="1" [(ngModel)]="exitPollData.felt_safe_and_secure" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="safe_yes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="safe_no" name="felt_safe_and_secure" [value]="0" [(ngModel)]="exitPollData.felt_safe_and_secure" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="safe_no">No</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>I had no difficulty going to and from work</td>
+          <td>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="no_difficulty_yes" name="no_difficulty_going_to_and_from_work" [value]="1" [(ngModel)]="exitPollData.no_difficulty_going_to_and_from_work" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="no_difficulty_yes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="no_difficulty_no" name="no_difficulty_going_to_and_from_work" [value]="0" [(ngModel)]="exitPollData.no_difficulty_going_to_and_from_work" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="no_difficulty_no">No</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>The company provided me with an allowance, stipend, or subsidy.</td>
+          <td>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="allowance_yes" name="provided_with_allowance" [value]="1" [(ngModel)]="exitPollData.provided_with_allowance" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="allowance_yes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="allowance_no" name="provided_with_allowance" [value]="0" [(ngModel)]="exitPollData.provided_with_allowance" [disabled]="isSubmitted && !isEditing">
+              <label class="form-check-label" for="allowance_no">No</label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="mb-3">
+      <label for="allowance_amount" class="form-label">If your answer at the last question is Yes, please enter the amount of allowance, stipend, or subsidy.</label>
+      <input type="text" class="form-control" id="allowance_amount" name="allowance_amount" placeholder="Enter allowance amount, leave blank if not applicable" [(ngModel)]="exitPollData.allowance_amount" [disabled]="isSubmitted && !isEditing">
+    </div>
+
+    <div class="mb-3">
+      <p><b>2. List down your training objectives and indicate the extent you have achieved them.</b></p>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Achievement Description</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of [1,2,3,4,5]">
+          <td>
+            <textarea class="form-control" [id]="'achievement_'+i+'_description'" [name]="'achievement_'+i+'_description'" [(ngModel)]="exitPollData['achievement_'+i+'_description']" [disabled]="isSubmitted && !isEditing"></textarea>
+          </td>
+          <td>
+            <div class="btn-group" role="group">
+              <input type="radio" class="btn-check" [id]="'achievement_'+i+'_rating_1'" [name]="'achievement_'+i+'_rating'" [value]="0" [(ngModel)]="exitPollData['achievement_'+i+'_rating']" [disabled]="isSubmitted && !isEditing">
+              <label class="btn btn-outline-dark" [for]="'achievement_'+i+'_rating_1'">0%</label>
+
+              <input type="radio" class="btn-check" [id]="'achievement_'+i+'_rating_2'" [name]="'achievement_'+i+'_rating'" [value]="25" [(ngModel)]="exitPollData['achievement_'+i+'_rating']" [disabled]="isSubmitted && !isEditing">
+
+              <label class="btn btn-outline-dark" [for]="'achievement_'+i+'_rating_2'">25%</label>
+
+              <input type="radio" class="btn-check" [id]="'achievement_'+i+'_rating_3'" [name]="'achievement_'+i+'_rating'" [value]="50" [(ngModel)]="exitPollData['achievement_'+i+'_rating']" [disabled]="isSubmitted && !isEditing">
+              <label class="btn btn-outline-dark" [for]="'achievement_'+i+'_rating_3'">50%</label>
+              
+              <input type="radio" class="btn-check" [id]="'achievement_'+i+'_rating_4'" [name]="'achievement_'+i+'_rating'" [value]="75" [(ngModel)]="exitPollData['achievement_'+i+'_rating']" [disabled]="isSubmitted && !isEditing">
+
+              <label class="btn btn-outline-dark" [for]="'achievement_'+i+'_rating_4'">75%</label>
+
+              <input type="radio" class="btn-check" [id]="'achievement_'+i+'_rating_5'" [name]="'achievement_'+i+'_rating'" [value]="100" [(ngModel)]="exitPollData['achievement_'+i+'_rating']" [disabled]="isSubmitted && !isEditing">
+              <label class="btn btn-outline-dark" [for]="'achievement_'+i+'_rating_5'">100%</label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="mb-3">
+      <label for="overall_training_experience" class="form-label">Overall Training Experience</label>
+      <input type="text" class="form-control" id="overall_training_experience" name="overall_training_experience" [(ngModel)]="exitPollData.overall_training_experience" [disabled]="isSubmitted && !isEditing" required>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="improvement_suggestion" class="form-label">Improvement Suggestion</label>
+      <textarea class="form-control" id="improvement_suggestion" name="improvement_suggestion" [(ngModel)]="exitPollData.improvement_suggestion" [disabled]="isSubmitted && !isEditing"></textarea>
+
+    </div>
+    <div class="d-flex justify-content-end">
+    <button type="submit" mat-raised-button color="primary" style="margin-right: 10px;" [disabled]="!exitPollForm.form.valid || isSubmitted">Submit</button>
+    <button type="button" mat-raised-button color="primary" (click)="onEdit()" *ngIf="isSubmitted && !isEditing">Edit</button>
+    <button type="button" mat-raised-button color="primary" (click)="onSave()" *ngIf="isEditing">Save</button>
+    </div>
+  </form>
+</div>

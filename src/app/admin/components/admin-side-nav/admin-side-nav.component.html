@@ -1,0 +1,82 @@
+<nav class="navbar">
+  <div
+    class="container-fluid d-flex justify-content-between align-items-center"
+  >
+    <div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="offcanvas offcanvas-start custom-offcanvas-width"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-header d-flex flex-column align-items-center">
+          <img
+            src="assets/practiEaseLogo.png"
+            alt="PractiEase Logo"
+            class="text-center mb-2"
+          />
+          <div class="text-center mb-0 h5">ICTe Solutions</div>
+          <h5 class="offcanvas-title mx-auto" id="offcanvasNavbarLabel">
+            <b></b>
+          </h5>
+        </div>
+        <hr class="hr" />
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-start flex-grow-1 ps-3">
+            <li
+              class="nav-list-item"
+              *ngFor="let item of list"
+              [ngClass]="{ active: isActive('/' + item.name.toLowerCase()) }"
+            >
+              <div
+                class="indicator"
+                [ngStyle]="{
+                  backgroundColor: isActive('/' + item.name.toLowerCase())
+                    ? '#FFA500'
+                    : 'transparent'
+                }"
+              ></div>
+              <i class="{{ item.icon }}" style="height: 50px"></i>
+              <span>
+                <a [routerLink]="['/admin', item.name.toLowerCase()]">{{
+                  item.name
+                }}</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <button class="btn text-center" (click)="logout()">
+          <img
+            width="25"
+            height="25"
+            src="https://img.icons8.com/ios-glyphs/30/logout-rounded--v1.png"
+            alt="logout-rounded--v1"
+          />
+        </button>
+      </div>
+    </div>
+    <div>
+      <p class="title text-center mt-2 h4">PRACTIEASE</p>
+    </div>
+    <div class="d-flex align-items-center">
+      <img
+        src="https://bootdey.com/img/Content/avatar/avatar7.png"
+        alt="Profile Picture"
+        class="img-fluid rounded-circle"
+        width="30"
+        height="30"
+      />
+      <h4 class="ms-2 mb-0">Admin</h4>
+    </div>
+  </div>
+</nav>

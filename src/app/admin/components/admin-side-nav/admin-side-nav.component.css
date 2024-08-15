@@ -1,0 +1,62 @@
+.navbar {
+  background-color: rgb(250, 137, 45);
+  color: white;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.custom-offcanvas-width {
+  width: 300px !important;
+}
+
+a {
+  margin-left: 5%;
+}
+
+.nav-list-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-list-item.active a {
+  font-weight: bold; /* Indicator for current page */
+}
+
+.nav-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Hover effect */
+}
+
+.indicator {
+  width: 5px;
+  height: 50px;
+  position: absolute;
+  left: -10px; /* Adjust the position as needed */
+  top: 0;
+  transition: background-color 0.3s ease;
+}
+
+.nav-list-item {
+  position: relative;
+}
+
+.nav-list-item.active .indicator {
+  background-color: #ffa500; /* Color for the indicator */
+}
+
+.offcanvas-header {
+  text-align: center; /* Center-align the content */
+}
+
+.offcanvas-header img {
+  width: 150px; /* Adjust the width of the logo as needed */
+  height: auto;
+}
+
+/* Hide the PRACTIEASE title on smaller screens */
+@media (max-width: 768px) {
+  .title {
+    display: none;
+  }
+}

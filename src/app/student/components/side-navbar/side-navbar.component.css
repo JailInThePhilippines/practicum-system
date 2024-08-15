@@ -1,0 +1,110 @@
+.navbar {
+  color: white;
+  background-color: white;
+  box-shadow: -1px 14px 11px -13px rgba(0,0,0,0.73);
+-webkit-box-shadow: -1px 14px 11px -13px rgba(0,0,0,0.73);
+-moz-box-shadow: -1px 14px 11px -13px rgba(0,0,0,0.73);
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.custom-offcanvas-width {
+  width: 250px !important;
+}
+
+a {
+  margin-left: 5%;
+}
+
+.nav-list-item a {
+  text-decoration: none;
+  color: white;
+}
+
+img{
+  color: white;
+}
+
+.nav-list-item.active a {
+  font-weight: bold; /* Indicator for current page */
+}
+
+.nav-list-item {
+  position: relative;
+}
+
+.nav-list-item.active .indicator {
+  background-color: #ffa500; /* Color for the indicator */
+}
+
+.offcanvas-header {
+  text-align: center; /* Center-align the content */
+}
+
+.offcanvas-header img {
+  width: 200px; /* Adjust the width of the logo as needed */
+  height: auto;
+}
+
+.profile-picture-container-fixed {
+  width: 30px;  /* Fixed width */
+  height: 30px; /* Fixed height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-picture-container-fixed img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .persistent-sidebar{
+    width: 15% !important;
+  }
+  img{
+    width: 150px !important;
+    height: auto;
+  }
+  i{
+    font-size: 0.7rem;
+  }
+}
+
+/* Custom CSS to make the sidebar always visible */
+.persistent-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px; /* Adjust width as needed */
+  background-color: #1A2C32; /* Set background color as needed */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1050;
+  overflow-y: auto;
+}
+
+/* Adjust the main content to make space for the sidebar */
+.container-fluid {
+  margin-left: 250px; /* Same width as the sidebar */
+}
+
+/* Optionally style the offcanvas header and body */
+.offcanvas-header {
+  padding: 1rem;
+}
+
+.offcanvas-body {
+  padding: 1rem;
+}
+

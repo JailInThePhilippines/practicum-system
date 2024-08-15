@@ -1,0 +1,16 @@
+.container{
+    margin-left: 20%;
+}
+
+.ratings, .forms, .certification, .overall, .suggestions, .submit{
+    margin-left: 0% !important;
+}
+
+@media screen and (max-width: 1366px) {
+    .container{
+        margin-left: 16% !important;
+    }
+    .ratings, .forms, .certification, .overall, .suggestions, .submit{
+        margin-left: 0% !important;
+    }
+}

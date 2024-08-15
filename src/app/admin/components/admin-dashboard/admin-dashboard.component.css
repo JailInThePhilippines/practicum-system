@@ -1,0 +1,34 @@
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+mat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.employer-card:hover,
+.instructor-card:hover,
+.student-card:hover,
+.linkedaccounts-card:hover {
+  background-color: #f8f9fa;
+}
+
+.vertical-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adjust as needed */
+}
+
+/* Add horizontal scroll for tables on smaller screens */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  }
+
+  .table {
+    min-width: 600px; /* Adjust based on your table content */
+  }
+}

@@ -1,0 +1,31 @@
+<!-- calendar.component.html -->
+<div class="container">
+    <div class="calendar-header">
+      <button class="nav-button" (click)="prevMonth()"><</button>
+      <span class="h4">{{ getCurrentMonth() }}</span>
+      <button class="nav-button" (click)="nextMonth()">></button>
+    </div>
+  <table class="calendar">
+    <thead>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let week of getCalendarWeeks(currentDate)">
+        <ng-container *ngFor="let date of week">
+          <td [class.today]="isToday(date)">
+            {{ date.getDate() }}
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  

@@ -1,0 +1,107 @@
+<div class="container mt-5">
+  <div class="h4 text-success">
+    Performance Evaluation Result <img src="assets/evaluate.png" alt="evaluate" />
+  </div>
+  <hr />
+</div>
+
+<!-- Cards for summary fields -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <mat-card class="mb-3">
+        <mat-card-title class="text-center">Employer</mat-card-title>
+        <mat-card-content class="text-center">{{ employerComments.employerName }}</mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="col-md-4">
+      <mat-card class="mb-3">
+        <mat-card-title class="text-center">Office Assigned</mat-card-title>
+        <mat-card-content class="text-center">{{ employerComments.officeAssigned }}</mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="col-md-4">
+      <mat-card class="mb-3">
+        <mat-card-title class="text-center">Hours Worked</mat-card-title>
+        <mat-card-content class="text-center">{{ employerComments.hoursWorked }}</mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<!-- Table for criteria feedback with pagination -->
+<div class="container mt-5 mb-5">
+  <mat-table [dataSource]="criteriaDataSource" class="mat-elevation-z8">
+    <!-- Criteria Column -->
+    <ng-container matColumnDef="criteria">
+      <mat-header-cell *matHeaderCellDef> Criteria </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.criteria }} </mat-cell>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.description }} </mat-cell>
+    </ng-container>
+
+    <!-- Score Column -->
+    <ng-container matColumnDef="score">
+      <mat-header-cell *matHeaderCellDef> Score </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.score }} </mat-cell>
+    </ng-container>
+
+    <!-- Header and row declarations -->
+    <mat-header-row *matHeaderRowDef="criteriaDisplayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: criteriaDisplayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
+<div class="container mt-3">
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<!-- Table for subject scores -->
+<div class="container mt-5">
+  <mat-table [dataSource]="subjectDataSource" class="mat-elevation-z8">
+    <!-- Subject Column -->
+    <ng-container matColumnDef="subject">
+      <mat-header-cell *matHeaderCellDef> Subject </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.subject }} </mat-cell>
+    </ng-container>
+
+    <!-- Score Column -->
+    <ng-container matColumnDef="score">
+      <mat-header-cell *matHeaderCellDef> Score </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.score }} </mat-cell>
+    </ng-container>
+
+    <!-- Header and row declarations -->
+    <mat-header-row *matHeaderRowDef="subjectDisplayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: subjectDisplayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
+<!-- Table for detailed feedback comments -->
+<div class="container mt-5">
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Category Column -->
+    <ng-container matColumnDef="category">
+      <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.category }} </mat-cell>
+    </ng-container>
+
+    <!-- Comment Column -->
+    <ng-container matColumnDef="comment">
+      <mat-header-cell *matHeaderCellDef> Comment </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.comment }} </mat-cell>
+    </ng-container>
+
+    <!-- Header and row declarations -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
+<app-coc></app-coc>

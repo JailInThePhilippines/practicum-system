@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Filter Options</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill" class="w-100">
+    <mat-label>Program</mat-label>
+    <mat-select [(ngModel)]="data.filterProgram">
+      <mat-option *ngFor="let program of data.uniquePrograms" [value]="program">{{ program }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="w-100">
+    <mat-label>Year</mat-label>
+    <mat-select [(ngModel)]="data.filterYear">
+      <mat-option *ngFor="let year of data.uniqueYears" [value]="year">{{ year }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="w-100">
+    <mat-label>Block</mat-label>
+    <mat-select [(ngModel)]="data.filterBlock">
+      <mat-option *ngFor="let block of data.uniqueBlocks" [value]="block">{{ block }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="actions-right">
+  <button class="btn mr-5" mat-raised-button color="primary" (click)="onCancel()">Cancel</button>
+  <button class="btn mr-5" mat-raised-button color="primary" (click)="onClearFilters()">Clear Filters</button>
+  <button class="btn mr-5" mat-raised-button color="primary" (click)="onApply()">Apply</button>
+</div>

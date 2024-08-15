@@ -1,0 +1,69 @@
+<div class="container mt-5">
+  <div class="h4 text-success">
+    Daily Time Record (DTR) <img src="assets/clock.png" alt="dtr" />
+  </div>
+  <hr />
+</div>
+
+<!-- Upload Button Section -->
+<div class="container mt-5">
+  <h4 class="text-dark">
+    <b
+      >Upload your DTR Files here. Only PDF files are allowed.</b
+    >
+  </h4>
+  <mat-card>
+    <mat-tab-group>
+      <mat-tab label="Daily Time in and Out Record">
+        <div class="file-upload">
+          <input
+            mat-button
+            color="primary"
+            type="file"
+            accept="application/pdf"
+            (change)="onFileSelected($event)"
+          />
+        </div>
+</mat-tab>
+</mat-tab-group>
+</mat-card>
+</div>
+
+<!-- Uploaded Files Section -->
+<div class="container mt-5 mb-5" *ngIf="uploadedFiles.length > 0">
+  <h4 class="text-dark"><b>Uploaded DTR Files</b></h4>
+  <table mat-table [dataSource]="uploadedFiles" class="mat-elevation-z8">
+    <ng-container matColumnDef="fileName">
+      <th mat-header-cell *matHeaderCellDef>File Name</th>
+      <td mat-cell *matCellDef="let file">{{ file.file_name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dtrStatus">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td
+        mat-cell
+        *matCellDef="let file"
+        [ngClass]="getStatusClass(file.dtr_status)"
+      >
+        {{ file.dtr_status }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
+      <td mat-cell *matCellDef="let file">
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="onDeleteFile(file.file_id)"
+          [disabled]="file.dtr_status === 'Approved'"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="uploadedFileColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: uploadedFileColumns"></tr>
+  </table>
+</div>

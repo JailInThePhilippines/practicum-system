@@ -1,0 +1,86 @@
+<div class="container mt-5">
+  <div class="text-success h5">
+    Announcement <img src="assets/notice.png" alt="notice" />
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><b>Create Announcement</b></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <hr>
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+              <label for="announcement-title">Title:</label>
+              <input
+                type="text"
+                id="announcement-title"
+                name="announcement-title"
+                class="form-control"
+                required
+                [(ngModel)]="title"
+              />
+            </div>
+            <div class="form-group">
+              <label for="announcement-body">Body:</label>
+              <textarea
+                id="announcement-body"
+                name="announcement-body"
+                class="form-control"
+                rows="4"
+                required
+                [(ngModel)]="body"
+              ></textarea>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button mat-raised-button color="primary" type="submit" class="mt-2">
+                Send
+              </button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><b>Your Announcements</b></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <hr>
+          <ng-container *ngIf="announcements.length > 0; else noAnnouncements">
+            <mat-card *ngFor="let announcement of announcements" class="mb-3">
+              <mat-card-content>
+                <h4 class="card-title">
+                  <b>{{ announcement.title }}</b>
+                </h4>
+                <hr />
+                <p class="card-text">{{ announcement.body }}</p>
+                <p class="card-text">
+                  <small class="text-muted"
+                    >Date Posted:
+                    {{ announcement.announcement_timestamp }}</small
+                  >
+                </p>
+                <!-- Delete button for each announcement -->
+                <button
+                  (click)="deleteAnnouncement(announcement.announcement_id)"
+                  mat-raised-button color="warn"
+                >
+                  Delete
+                </button>
+              </mat-card-content>
+            </mat-card>
+          </ng-container>
+          <ng-template #noAnnouncements>
+            <p>No announcements found.</p>
+          </ng-template>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

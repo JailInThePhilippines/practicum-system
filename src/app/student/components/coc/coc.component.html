@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="h4 text-success">Certificate of Completion <img src="assets/documents.png" alt="documents"></div>
+  <hr />
+</div>
+
+<div class="container mt-3 mb-5">
+  <div *ngIf="certificateInfo">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- File Name Column -->
+        <ng-container matColumnDef="fileName">
+          <th mat-header-cell *matHeaderCellDef> File Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.file_name || 'No Name'}} </td>
+        </ng-container>
+
+        <!-- View Button Column -->
+        <ng-container matColumnDef="view">
+          <th mat-header-cell *matHeaderCellDef> View </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="downloadCertificate(element)">
+              <mat-icon>open_in_new</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  <div *ngIf="!certificateInfo" class="no-certificate-message">
+    <p>No certificate available</p>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container mt-5 mb-5">
+  <div class="h4 text-success">
+    Student Activities <img src="assets/documents.png" alt="resources" />
+  </div>
+  <hr />
+</div>
+
+  <div class="container mt-5">
+    <mat-table [dataSource]="categories" class="mat-elevation-z8">
+  
+      <!-- Category Column -->
+      <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
+      </ng-container>
+  
+      <!-- File Name Column -->
+      <ng-container matColumnDef="fileName">
+        <mat-header-cell *matHeaderCellDef> File Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.file_name || 'No file uploaded'}} </mat-cell>
+      </ng-container>
+  
+      <!-- Upload Column -->
+      <ng-container matColumnDef="upload">
+        <mat-header-cell *matHeaderCellDef> Upload </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="openFileExplorer(element.category)" aria-label="Upload file">
+            <mat-icon>file_upload</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button color="warn" (click)="deleteFile(element)" [disabled]="!element.file_name" aria-label="Delete file">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  <ng-template #noFiles>
+    <div>No files found.</div>
+  </ng-template>

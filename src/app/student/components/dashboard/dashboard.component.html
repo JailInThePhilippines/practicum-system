@@ -1,0 +1,266 @@
+<div class="container mt-5">
+  <div class="h4 text-success">Dashboard <img src="assets/dashboard.png" alt="dashboard"></div>
+  <hr />
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="card requirements" style="border-color: black;">
+        <div class="card-header"><b>Requirements for Practicum</b></div>
+        <div class="card-body">
+          <table class="table table-bordered" *ngFor="let status of requirementStatus">
+            <thead>
+              <tr>
+                <th>Requirements</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Endorsement Letter</td>
+                <td
+                  [ngStyle]="{
+                    color:
+                      status.endorsement_status === 'Cleared'
+                        ? 'green'
+                        : status.endorsement_status === 'Not Cleared'
+                        ? 'red'
+                        : status.endorsement_status === 'Currently Verifying'
+                        ? '#FFBF00'
+                        : status.endorsement_status === 'Not Yet Cleared'
+                        ? '#E49B0F'
+                        : 'inherit'
+                  }"
+                >
+                  {{ status.endorsement_status }}
+                </td>
+              </tr>
+              <tr>
+                <td>Application Letter</td>
+                <td
+                  [ngStyle]="{
+                    color:
+                      status.application_status === 'Cleared'
+                        ? 'green'
+                        : status.application_status === 'Not Cleared'
+                        ? 'red'
+                        : status.application_status === 'Currently Verifying'
+                        ? '#FFBF00'
+                        : status.application_status === 'Not Yet Cleared'
+                        ? '#E49B0F'
+                        : 'inherit'
+                  }"
+                >
+                  {{ status.application_status }}
+                </td>
+              </tr>
+              <tr>
+                <td>Parent's Consent</td>
+                <td
+                  [ngStyle]="{
+                    color:
+                      status.consent_status === 'Cleared'
+                        ? 'green'
+                        : status.consent_status === 'Not Cleared'
+                        ? 'red'
+                        : status.consent_status === 'Currently Verifying'
+                        ? '#FFBF00'
+                        : status.consent_status === 'Not Yet Cleared'
+                        ? '#E49B0F'
+                        : 'inherit'
+                  }"
+                >
+                  {{ status.consent_status }}
+                </td>
+              </tr>
+              <tr>
+                <td>Acceptance Letter</td>
+                <td
+                  [ngStyle]="{
+                    color:
+                      status.acceptance_status === 'Cleared'
+                        ? 'green'
+                        : status.acceptance_status === 'Not Cleared'
+                        ? 'red'
+                        : status.acceptance_status === 'Currently Verifying'
+                        ? '#FFBF00'
+                        : status.acceptance_status === 'Not Yet Cleared'
+                        ? '#E49B0F'
+                        : 'inherit'
+                  }"
+                >
+                  {{ status.acceptance_status }}
+                </td>
+              </tr>
+              <tr>
+                <td>Resume</td>
+                <td
+                  [ngStyle]="{
+                    color:
+                      status.resume_status === 'Cleared'
+                        ? 'green'
+                        : status.resume_status === 'Not Cleared'
+                        ? 'red'
+                        : status.resume_status === 'Currently Verifying'
+                        ? '#FFBF00'
+                        : status.resume_status === 'Not Yet Cleared'
+                        ? '#E49B0F'
+                        : 'inherit'
+                  }"
+                >
+                  {{ status.resume_status }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Separate Table for Non-Requirement Items -->
+      <div class="card mt-3 mb-3 requirements" style="border-color: black;">
+        <div class="card-header"><b>Student Activities</b></div>
+        <div class="card-body">
+          <table class="table table-bordered" *ngFor="let status of requirementStatus">
+            <thead>
+              <tr>
+                <th>Events</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Activities Documentation</td>
+                <td
+                  [ngStyle]="{
+                    color:
+                      status.ccs_status === 'Cleared'
+                        ? 'green'
+                        : status.ccs_status === 'Not Cleared'
+                        ? 'red'
+                        : status.ccs_status === 'Currently Verifying'
+                        ? '#FFBF00'
+                        : status.ccs_status === 'Not Yet Cleared'
+                        ? '#E49B0F'
+                        : 'inherit'
+                  }"
+                >
+                  {{ status.ccs_status }}
+                </td>
+              </tr>
+              <tr>
+                <td>Trainings/Seminars</td>
+                <td
+                  [ngStyle]="{
+                    color:
+                      status.seminar_status === 'Cleared'
+                        ? 'green'
+                        : status.seminar_status === 'Not Cleared'
+                        ? 'red'
+                        : status.seminar_status === 'Currently Verifying'
+                        ? '#FFBF00'
+                        : status.seminar_status === 'Not Yet Cleared'
+                        ? '#E49B0F'
+                        : 'inherit'
+                  }"
+                >
+                  {{ status.seminar_status }}
+                </td>
+              </tr>
+              <tr>
+                <td>OJT Documentation</td>
+                <td
+                  [ngStyle]="{
+                    color:
+                      status.sportsfest_status === 'Cleared'
+                        ? 'green'
+                        : status.sportsfest_status === 'Not Cleared'
+                        ? 'red'
+                        : status.sportsfest_status === 'Currently Verifying'
+                        ? '#FFBF00'
+                        : status.sportsfest_status === 'Not Yet Cleared'
+                        ? '#E49B0F'
+                        : 'inherit'
+                  }"
+                >
+                  {{ status.sportsfest_status }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p><b>*You may upload your files after finishing your OJT Hours or wait for your advisor's announcement.</b></p>
+          <p><b>16 Personality Test</b></p>
+          <p>Take the 16 Personality Test to know more and assess yourself.
+            <a href="https://www.16personalities.com/" target="_blank">Take the Test</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <div class="card mt-3 mb-3 requirements"  style="border-color: black;">
+        <div class="card-header info">
+          <div class="card-title m-0"><b>Announcements</b></div>
+        </div>
+        <div class="card-body">
+          <ng-container *ngIf="announcements.length > 0; else noAnnouncements">
+            <div *ngFor="let announcement of announcements" class="card mb-3">
+              <div class="card-body">
+                <h4 class="card-title">
+                  <b>{{ announcement.title }}</b>
+                </h4>
+                <hr />
+                <p class="card-text">{{ announcement.body }}</p>
+                <p class="card-text">
+                  <small class="text-muted">Date Posted: {{ announcement.announcement_timestamp }}</small>
+                </p>
+              </div>
+            </div>
+          </ng-container>
+          <ng-template #noAnnouncements>
+            <p>No announcements found.</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calendar Card -->
+    <div class="col-md-6 calendar">
+      <div class="card" style="border-color: black;">
+        <div class="card-header"><b>Calendar</b></div>
+        <div class="card-body">
+          <app-calendar></app-calendar>
+        </div>
+      </div>
+
+      <!-- Midyear Status Description Card -->
+      <div class="card mt-3 mb-3 status" style="border-color: black;">
+        <div class="card-header"><b>Practicum Status Description</b></div>
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th class="text-success" scope="col">Status for Practicum Requirements</th>
+                <th class="text-success" scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-start" scope="row">Cleared</th>
+                <td>Your requirements for practicum are cleared.</td>
+              </tr>
+              <tr>
+                <th class="text-start" scope="row">Currently Verifying</th>
+                <td>Your requirements are currently being checked by your advisor.</td>
+              </tr>
+              <tr>
+                <th class="text-start" scope="row">Not Yet Cleared</th>
+                <td>Your requirements are currently waiting to be checked or you have not yet passed your requirements.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: #fffffa;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+}
+
+.profile-picture-container {
+  width: 150px;  /* Adjust width as needed */
+  height: 150px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Center the container itself */
+}
+
+.profile-picture-container img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+}
+
+.container{
+  margin-left: 20%;
+}
+
+@media screen and (max-width: 1366px) {
+  .container {
+      margin-left: 16%; /* Adjust margin for smaller screens */
+  }
+}

@@ -1,0 +1,46 @@
+<section class="bbg vh-100">
+  <div class="container py-5 h-100">
+    <div class="d-flex justify-content-center align-items-center h-100 m-0">
+      <div>
+        <div style="border-radius: 1rem;">
+          <div class="g-0">
+            <div>
+              <div class="p-4 p-lg-5 text-black">
+                <div class="row">
+                  <div class="col-md-4 align-items-center pb-1">
+                    <img class="image" src="assets/gclogo.png" alt="PractiEase Logo" />
+                  </div>
+                  <div class="col-md-4 align-items-center pb-1">
+                    <img class="image" src="assets/practiEaseLogo.png" alt="PractiEase Logo" />
+                  </div>
+                  <div class="col-md-4 align-items-center pb-1">
+                    <img class="image" src="assets/ccsLogo.png" alt="PractiEase Logo" />
+                  </div>
+                </div>
+                <h1 style="text-align: center;">WELCOME, INSTRUCTOR!</h1>
+                <h4 class="fw-normal mb-4 pb-3" style="text-align: center; letter-spacing: 1px;">
+                  Log in with your Credentials
+                </h4>
+                <form (ngSubmit)="onSubmit()">
+                  <div class="form-outline mb-4">
+                    <div class="form-group form-outline mb-4">
+                      <input type="email" class="form-control form-control-lg ps-5" id="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+                      <i class="fas fa-user ps-2"></i>
+                    </div>
+                    <div class="form-group form-outline mb-4 position-relative">
+                      <input type="password" class="form-control form-control-lg ps-5" id="password" [(ngModel)]="password" name="password" placeholder="Password" required>
+                      <i class="fas fa-lock ps-2"></i>
+                    </div>
+                    <div class="pt-1 mb-4">
+                      <button type="submit" class="btn btn-lg btn-block b1 w-100">Login</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

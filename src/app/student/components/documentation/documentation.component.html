@@ -1,0 +1,61 @@
+<div class="container mt-5">
+    <div class="h4 text-success">
+      Documentation
+      <img src="assets/accomplishments.png" alt="accomplishment">
+    </div>
+    <hr />
+  </div>
+  
+  <div class="container">
+    <h4 class="text-dark"><b>You may upload your documentation here. Narrative report with images as proofs of your work.</b></h4>
+  </div>
+  
+  <div class="container mt-5">
+    <mat-card>
+      <mat-tab-group>
+        <mat-tab label="Documentation">
+          <div>
+            <input type="file" (change)="onFileUpload($event)" accept="application/pdf" />
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+  
+  <div class="container mt-5">
+    <h4 class="text-dark"><b>Uploaded Files</b></h4>
+    <hr>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="fileUploaded">
+        <mat-header-cell *matHeaderCellDef> File Uploaded </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="documentation_status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="getDocumentStatusClass(element.documentation_status)">
+          {{ element.documentation_status }}
+        </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button 
+            mat-icon-button 
+            color="warn" 
+            (click)="deleteFile(element)" 
+            [disabled]="element.documentation_status === 'Cleared'">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </table>
+  </div>
+  
+  <div class="container mt-3 mb-5">
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>

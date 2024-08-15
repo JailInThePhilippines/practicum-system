@@ -1,0 +1,66 @@
+.image {
+  width: 150px;
+}
+
+/*Added Design*/
+#slogo {
+  border-radius: 50%;
+  width: 150px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.bg {
+  animation: slide 10s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(250, 137, 45) 50%, #29984e 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 15s;
+}
+
+.bg3 {
+  animation-duration: 15s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .image {
+    display: none;
+  }
+
+  /* Adjust card padding for smaller screens */
+  .card-body {
+    padding: 1rem;
+  }
+
+  /* Center the text in the card */
+  .text-black {
+    text-align: center;
+  }
+
+}

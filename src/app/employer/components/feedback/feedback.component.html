@@ -1,0 +1,1494 @@
+<div class="container mt-5">
+  <div class="h4 text-success">Performance Evaluation Form <img src="assets/evaluate.png" alt="evaluate"></div>
+  <hr />
+</div>
+
+<div class="container mt-5">
+  <form (ngSubmit)="submitFeedback()">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Student Trainee Details</h5>
+      </div>
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col">
+            <label for="name">Name of Student Trainee:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Enter name"
+              [(ngModel)]="feedbackData.student_name"
+            />
+          </div>
+          <div class="col">
+            <label for="department">Office:</label>
+            <input
+              type="text"
+              id="department"
+              name="office"
+              class="form-control"
+              placeholder="Enter office/department/branch"
+              [(ngModel)]="feedbackData.office_department_branch"
+            />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="supervisor">Supervisor:</label>
+            <input
+              type="text"
+              id="supervisor"
+              name="supervisor"
+              class="form-control"
+              placeholder="Enter supervisor/faculty/coordinator"
+              [(ngModel)]="feedbackData.supervisor"
+            />
+          </div>
+          <div class="col">
+            <label for="hours">Hours:</label>
+            <input
+              type="text"
+              id="hours"
+              name="hours"
+              class="form-control"
+              placeholder="Enter number of hours"
+              [(ngModel)]="feedbackData.hours_worked"
+            />
+          </div>
+          <div class="col">
+            <label for="student_id">SSID:</label>
+            <input
+              type="number"
+              id="student_id"
+              name="student_id"
+              class="form-control"
+              placeholder="Enter Student SSID"
+              [(ngModel)]="feedbackData.student_id"
+            />
+          </div>          
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 text-center ratings">
+      <h5>
+        Rate the student trainee's performance during the days they worked for
+        your company.
+      </h5>
+      <hr />
+      <button
+        type="button"
+        class="w-100"
+        mat-raised-button color="primary"
+        data-bs-toggle="modal"
+        data-bs-target="#ratingScaleModal"
+      >
+        View Rating Scale
+      </button>
+    </div>
+
+    <div class="container mt-3 forms">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th class="h4">Criteria</th>
+            <th class="text-center">1</th>
+            <th class="text-center">2</th>
+            <th class="text-center">3</th>
+            <th class="text-center">4</th>
+            <th class="text-center">5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="h5 text-center">A. Knowledge</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              1. Identifies problems, gathers data related to the problem,
+              analyzes the data gathered and selects appropriate actions.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_1"
+                value="1"
+                [(ngModel)]="feedbackData.knowledge_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_1"
+                value="2"
+                [(ngModel)]="feedbackData.knowledge_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_1"
+                value="3"
+                [(ngModel)]="feedbackData.knowledge_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_1"
+                value="4"
+                [(ngModel)]="feedbackData.knowledge_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_1"
+                value="5"
+                [(ngModel)]="feedbackData.knowledge_criteria_1"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2. Sets priorities in the workplace based on the identified needs.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_2"
+                value="1"
+                [(ngModel)]="feedbackData.knowledge_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_2"
+                value="2"
+                [(ngModel)]="feedbackData.knowledge_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_2"
+                value="3"
+                [(ngModel)]="feedbackData.knowledge_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_2"
+                value="4"
+                [(ngModel)]="feedbackData.knowledge_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_2"
+                value="5"
+                [(ngModel)]="feedbackData.knowledge_criteria_2"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              3. Formulates plan based on priority needs and problems in the
+              workplace.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_3"
+                value="1"
+                [(ngModel)]="feedbackData.knowledge_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_3"
+                value="2"
+                [(ngModel)]="feedbackData.knowledge_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_3"
+                value="3"
+                [(ngModel)]="feedbackData.knowledge_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_3"
+                value="4"
+                [(ngModel)]="feedbackData.knowledge_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_3"
+                value="5"
+                [(ngModel)]="feedbackData.knowledge_criteria_3"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              4. Promotes safety measures in all aspects of the job assigned to
+              him/her.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_4"
+                value="1"
+                [(ngModel)]="feedbackData.knowledge_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_4"
+                value="2"
+                [(ngModel)]="feedbackData.knowledge_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_4"
+                value="3"
+                [(ngModel)]="feedbackData.knowledge_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_4"
+                value="4"
+                [(ngModel)]="feedbackData.knowledge_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_4"
+                value="5"
+                [(ngModel)]="feedbackData.knowledge_criteria_4"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              5. Applies appropriate IT/CS principles on the tasks on hand.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_5"
+                value="1"
+                [(ngModel)]="feedbackData.knowledge_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_5"
+                value="2"
+                [(ngModel)]="feedbackData.knowledge_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_5"
+                value="3"
+                [(ngModel)]="feedbackData.knowledge_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_5"
+                value="4"
+                [(ngModel)]="feedbackData.knowledge_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="knowledge_criteria_5"
+                value="5"
+                [(ngModel)]="feedbackData.knowledge_criteria_5"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="h5 text-center">B. Skills</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1. Analyzes the tasks assigned to him/her.</td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_1"
+                value="1"
+                [(ngModel)]="feedbackData.skills_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_1"
+                value="2"
+                [(ngModel)]="feedbackData.skills_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_1"
+                value="3"
+                [(ngModel)]="feedbackData.skills_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_1"
+                value="4"
+                [(ngModel)]="feedbackData.skills_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_1"
+                value="5"
+                [(ngModel)]="feedbackData.skills_criteria_1"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2. Works with thoroughness and accuracy, orderliness and neatness.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_2"
+                value="1"
+                [(ngModel)]="feedbackData.skills_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_2"
+                value="2"
+                [(ngModel)]="feedbackData.skills_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_2"
+                value="3"
+                [(ngModel)]="feedbackData.skills_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_2"
+                value="4"
+                [(ngModel)]="feedbackData.skills_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_2"
+                value="5"
+                [(ngModel)]="feedbackData.skills_criteria_2"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>3. Sets systems objectives in their order of priority.</td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_3"
+                value="1"
+                [(ngModel)]="feedbackData.skills_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_3"
+                value="2"
+                [(ngModel)]="feedbackData.skills_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_3"
+                value="3"
+                [(ngModel)]="feedbackData.skills_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_3"
+                value="4"
+                [(ngModel)]="feedbackData.skills_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_3"
+                value="5"
+                [(ngModel)]="feedbackData.skills_criteria_3"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              4. Has the initiative and ingenuity in finding ways and means to
+              accomplish objectives.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_4"
+                value="1"
+                [(ngModel)]="feedbackData.skills_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_4"
+                value="2"
+                [(ngModel)]="feedbackData.skills_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_4"
+                value="3"
+                [(ngModel)]="feedbackData.skills_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_4"
+                value="4"
+                [(ngModel)]="feedbackData.skills_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_4"
+                value="5"
+                [(ngModel)]="feedbackData.skills_criteria_4"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>5. Relates IT/CS principles correctly to the assigned task.</td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_5"
+                value="1"
+                [(ngModel)]="feedbackData.skills_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_5"
+                value="2"
+                [(ngModel)]="feedbackData.skills_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_5"
+                value="3"
+                [(ngModel)]="feedbackData.skills_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_5"
+                value="4"
+                [(ngModel)]="feedbackData.skills_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_5"
+                value="5"
+                [(ngModel)]="feedbackData.skills_criteria_5"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              6. Prepares and administers necessary and appropriate evaluation
+              for the accomplished work.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_6"
+                value="1"
+                [(ngModel)]="feedbackData.skills_criteria_6"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_6"
+                value="2"
+                [(ngModel)]="feedbackData.skills_criteria_6"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_6"
+                value="3"
+                [(ngModel)]="feedbackData.skills_criteria_6"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_6"
+                value="4"
+                [(ngModel)]="feedbackData.skills_criteria_6"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_6"
+                value="5"
+                [(ngModel)]="feedbackData.skills_criteria_6"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              7. Maintains accurate and updated documentation of the work done.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_7"
+                value="1"
+                [(ngModel)]="feedbackData.skills_criteria_7"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_7"
+                value="2"
+                [(ngModel)]="feedbackData.skills_criteria_7"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_7"
+                value="3"
+                [(ngModel)]="feedbackData.skills_criteria_7"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_7"
+                value="4"
+                [(ngModel)]="feedbackData.skills_criteria_7"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_7"
+                value="5"
+                [(ngModel)]="feedbackData.skills_criteria_7"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              8. Provides safety measures for the prevention of accidents.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_8"
+                value="1"
+                [(ngModel)]="feedbackData.skills_criteria_8"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_8"
+                value="2"
+                [(ngModel)]="feedbackData.skills_criteria_8"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_8"
+                value="3"
+                [(ngModel)]="feedbackData.skills_criteria_8"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_8"
+                value="4"
+                [(ngModel)]="feedbackData.skills_criteria_8"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="skills_criteria_8"
+                value="5"
+                [(ngModel)]="feedbackData.skills_criteria_8"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="h5 text-center">C. Attitude</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>1. Reports in the workplace on time regularly.</td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_1"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_1"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_1"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_1"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_1"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_1"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_1"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2. Never leaves the area without permission from his/her superior.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_2"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_2"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_2"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_2"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_2"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_2"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_2"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>3. Practices good grooming.</td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_3"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_3"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_3"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_3"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_3"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_3"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_3"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              4. Carries self with dignity and respect, projects a positive
+              self-image.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_4"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_4"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_4"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_4"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_4"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_4"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_4"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>5. Oberves personal and professional decorum.</td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_5"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_5"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_5"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_5"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_5"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_5"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_5"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>6. Establishes friendliness but not familiarity.</td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_6"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_6"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_6"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_6"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_6"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_6"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_6"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_6"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_6"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_6"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              7. Gives due respect to the superiors; always tactful when dealing
+              with them.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_7"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_7"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_7"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_7"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_7"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_7"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_7"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_7"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_7"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_7"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              8. Behaves in accordance with the set policies and standards of
+              the university and company.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_8"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_8"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_8"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_8"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_8"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_8"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_8"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_8"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_8"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_8"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              9. Works collaboratively and cooperates with other members of the
+              company as necessary.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_9"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_9"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_9"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_9"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_9"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_9"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_9"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_9"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_9"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_9"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              10. Works harmoniously with others towards overall efficiency of
+              the organization.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_10"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_10"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_10"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_10"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_10"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_10"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_10"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_10"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_10"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_10"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              11. Accepts constructive criticisms and suggestions given by
+              superior and co-worker.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_11"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_11"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_11"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_11"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_11"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_11"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_11"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_11"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_11"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_11"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              12. Helps in keeping the immediate environment clean and orderly.
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_12"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_12"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_12"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_12"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_12"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_12"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_12"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_12"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_12"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_12"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>13. Submits requirements on time.</td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_13"
+                value="1"
+                [(ngModel)]="feedbackData.attitude_criteria_13"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_13"
+                value="2"
+                [(ngModel)]="feedbackData.attitude_criteria_13"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_13"
+                value="3"
+                [(ngModel)]="feedbackData.attitude_criteria_13"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_13"
+                value="4"
+                [(ngModel)]="feedbackData.attitude_criteria_13"
+              />
+            </td>
+            <td class="text-center">
+              <input
+                type="radio"
+                name="attitude_criteria_13"
+                value="5"
+                [(ngModel)]="feedbackData.attitude_criteria_13"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container text-center mt-5 certification">
+      <h5>
+        It is hereby certified that the herein student-trainee rendered the
+        entire Hours of service in this company establishment.
+      </h5>
+    </div>
+
+    <div class="card mt-4 mb-4">
+      <div class="card-body">
+        <!-- Overall Performance Checkboxes -->
+        <div class="container mt-3 overall">
+          <div class="row justify-content-center">
+            <div class="col-auto">
+              <p class="mb-3 text-center h3">Overall Performance</p>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="overall_performance"
+                  id="overallExcellent"
+                  value="Excellent"
+                  [(ngModel)]="overall_performance"
+                />
+                <label class="form-check-label" for="overallExcellent"
+                  >Excellent</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="overall_performance"
+                  id="overallVeryGood"
+                  value="Very Good"
+                  [(ngModel)]="overall_performance"
+                />
+                <label class="form-check-label" for="overallVeryGood"
+                  >Very Good</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="overall_performance"
+                  id="overallGood"
+                  value="Good"
+                  [(ngModel)]="overall_performance"
+                />
+                <label class="form-check-label" for="overallGood">Good</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="overall_performance"
+                  id="overallFair"
+                  value="Fair"
+                  [(ngModel)]="overall_performance"
+                />
+                <label class="form-check-label" for="overallFair">Fair</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="overall_performance"
+                  id="overallPoor"
+                  value="Poor"
+                  [(ngModel)]="overall_performance"
+                />
+                <label class="form-check-label" for="overallPoor">Poor</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Employer's Comments/Suggestions -->
+        <div class="container mt-3 suggestions">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="major_strongpoints"
+                  >Student's Major Strongpoints:</label
+                >
+                <textarea
+                  class="form-control"
+                  id="major_strongpoints"
+                  name="major_strongpoints"
+                  rows="3"
+                  [(ngModel)]="major_strongpoints"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="major_weakpoints"
+                  >Student's Major Weakpoints:</label
+                >
+                <textarea
+                  class="form-control"
+                  id="major_weakpoints"
+                  name="major_weakpoints"
+                  rows="3"
+                  [(ngModel)]="major_weakpoints"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="other_comments">Other Comments:</label>
+                <textarea
+                  class="form-control"
+                  id="other_comments"
+                  name="other_comments"
+                  rows="3"
+                  [(ngModel)]="other_comments"
+                ></textarea>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="suggestions_strongpoints"
+                  >Suggestions on Student's Strongpoints:</label
+                >
+                <textarea
+                  class="form-control"
+                  id="suggestions_strongpoints"
+                  name="suggestions_strongpoints"
+                  rows="3"
+                  [(ngModel)]="suggestions_strongpoints"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="suggestions_weakpoints"
+                  >Suggestions on Student's Weakpoints:</label
+                >
+                <textarea
+                  class="form-control"
+                  id="suggestions_weakpoints"
+                  name="suggestions_weakpoints"
+                  rows="3"
+                  [(ngModel)]="suggestions_weakpoints"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="recommendation"
+                  >Would you recommend him/her for further employment in your
+                  own firm?</label
+                >
+                <textarea
+                  class="form-control"
+                  id="recommendation"
+                  name="recommendation"
+                  rows="3"
+                  [(ngModel)]="recommendation"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center mt-3 mb-5 submit">
+      <button type="submit" mat-raised-button color="primary" class="w-100">
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <!-- Vertically Centered Modal -->
+  <div
+    class="modal fade"
+    id="ratingScaleModal"
+    tabindex="-1"
+    aria-labelledby="ratingScaleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ratingScaleModalLabel">Rating Scale</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="text-success">5 - Excellent</p>
+          <p class="text-success-emphasis">4 - Very Good</p>
+          <p class="text-warning">3 - Good</p>
+          <p class="text-danger-emphasis">2 - Fair</p>
+          <p class="text-danger">1 - Poor</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

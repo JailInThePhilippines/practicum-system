@@ -1,0 +1,110 @@
+.image {
+  width: 150px;
+}
+
+/* Buttons Design */
+.btn {
+  width: 30%;
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #17141d;
+}
+
+.btn:hover {
+  background-color: rgb(32, 94, 181);
+  color: white;
+  font-weight: bold;
+}
+
+.container {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ddd;
+  backdrop-filter: blur(20px);
+  height: 100%;
+  width: 55%;
+  padding: 20px;
+}
+
+/* Added design */
+#slogo {
+  border-radius: 50%;
+  width: 150px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.bg {
+  animation: slide 10s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(250, 137, 45) 50%, #29984e 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 15s;
+}
+
+.bg3 {
+  animation-duration: 15s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .image{
+    display: none;
+  }
+
+  #slogo {
+    width: 100px;
+  }
+
+  .btn {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .row.justify-content-center.align-items-center {
+    flex-direction: column;
+  }
+
+  .col-md-3 {
+    margin-bottom: 20px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  h1,
+  h3 {
+    font-size: 1.2rem;
+  }
+}

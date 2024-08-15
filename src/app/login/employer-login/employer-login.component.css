@@ -1,0 +1,101 @@
+/* Custom styles for the section */
+.reg {
+  text-align: center;
+}
+
+.btn1 {
+  align-items: center;
+  justify-content: center;
+  margin-left: 12%;
+}
+
+h1 {
+  font-weight: bold;
+  color: #1A2C32;
+}
+
+h4 {
+  font-weight: bold !important;
+}
+
+.image {
+  width: 150px;
+}
+
+.bbg {
+  height: 100vh;
+}
+
+/* Buttons Design */
+.bbt {
+  width: 65%;
+}
+
+.b1 {
+  background-color: #1A2C32;
+  color: white;
+  font-weight: 600;
+  font-size: larger;
+  border: none;
+  border-radius: 20px;
+  height: 50px;
+}
+
+.bbg:before {
+  position: absolute;
+  content: "";
+  width: 450px;
+  height: 450px;
+}
+
+/* Input Designs */
+.form-outline {
+  position: relative;
+}
+
+.form-outline input {
+  padding-left: 35px;
+  width: 100%; /* Ensure the input field takes full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.form-outline i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px; /* Position the icon to the right inside the input */
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  cursor: pointer;
+}
+
+.entity {
+  width: 450px;
+  height: 450px;
+}
+
+/* Media query to hide images on smaller screens */
+@media (max-width: 768px) {
+
+  .entity,
+  .image {
+    display: none;
+  }
+
+  /* Adjust card padding for smaller screens */
+  .card-body {
+    padding: 1rem;
+  }
+
+  /* Center the text in the card */
+  .text-black {
+    text-align: center;
+  }
+
+}

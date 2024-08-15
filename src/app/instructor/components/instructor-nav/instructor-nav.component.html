@@ -1,0 +1,62 @@
+<nav class="navbar">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div>
+      <!-- Hamburger menu for small screens -->
+      <div class="hamburger-menu" (click)="toggleSidebar()">
+        &#9776; <!-- Unicode for hamburger icon -->
+      </div>
+      <!-- Sidebar content wrapped in a div with a custom class -->
+      <div class="persistent-sidebar custom-offcanvas-width" id="offcanvasNavbar">
+        <div class="offcanvas-header d-flex flex-column align-items-center">
+          <div class="container mt-3 mb-3">
+            <img src="assets/practiease.png" alt="">
+          </div>
+          <div class="text-center mb-0 h5">ICTe Solutions</div>
+          <p class="text-center mb-0 h5">OJT Adviser</p>
+          <h5 class="offcanvas-title mx-auto" id="offcanvasNavbarLabel"></h5>
+        </div>
+        <hr>
+        <div class="container">
+          <button mat-raised-button class="w-100" style="color: black;" (click)="openFilterDialog()">Filter Classes</button>
+        </div>
+        <hr class="hr" />
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-start flex-grow-1 ps-3">
+            <li class="nav-list-item" [ngClass]="{ 'active': isActive('/dashboard') }">
+              <i class="fa-solid fa-chart-simple" style="height: 50px"></i>
+              <span>
+                <a [routerLink]="['/instructor', 'dashboard']">Dashboard</a>
+              </span>
+            </li>
+            <li class="nav-list-item" [ngClass]="{ 'active': isActive('/class') }">
+              <i class="fa-solid fa-home" style="height: 50px"></i>
+              <span>
+                <a [routerLink]="['/instructor', 'class']">Class List</a>
+              </span>
+            </li>
+            <li class="nav-list-item" [ngClass]="{ 'active': isActive('/announcement') }">
+              <i class="fa-solid fa-bullhorn" style="height: 50px"></i>
+              <span>
+                <a [routerLink]="['/instructor', 'announcement']">Announce</a>
+              </span>
+            </li>
+            <li class="nav-list-item">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>
+                <button class="btn text-center" style="color: white;" (click)="logout()">
+                  Sign Out
+                </button>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="title mt-2 h4" style="color: black;">PRACTIEASE</p>
+    </div>
+    <div class="d-flex align-items-center">
+      <h4 class="ms-2 mb-0" style="color: black">{{ instructorName ? instructorName : 'Instructor' }}</h4>
+    </div>
+  </div>
+</nav>

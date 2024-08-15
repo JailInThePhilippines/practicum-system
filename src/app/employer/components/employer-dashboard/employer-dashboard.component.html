@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+      <div class="text-success h5">
+        Student Trainees
+        <img src="assets/dashboard.png" alt="dashboard" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="students-container container mt-5" *ngIf="dataSource.data.length > 0">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="student_name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let student">
+        <div class="student-info">
+          <img [src]="getProfilePictureUrl(student)" alt="Profile Picture" class="student-profile" />
+          <span>{{ student.student_name }}</span>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Program, Year, Block Column -->
+    <ng-container matColumnDef="program_year_block">
+      <th mat-header-cell *matHeaderCellDef> Program - Year - Block </th>
+      <td mat-cell *matCellDef="let student"> {{ student.program }} - {{ student.student_year }}{{ student.block }} </td>
+    </ng-container>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="school_id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let student"> {{ student.school_id }} </td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> View Submissions </th>
+      <td mat-cell *matCellDef="let student">
+        <button  mat-icon-button (click)="openDialog(student)"><mat-icon>open_in_new</mat-icon></button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<!-- Display message and image when no records are found -->
+<div class="container mt-5" *ngIf="dataSource.data.length === 0">
+  <div class="row">
+    <div class="col-12 text-center">
+      <img width="48" height="48" src="https://img.icons8.com/pulsar-color/48/no-register.png" alt="no-register" />
+      <div class="text-center text-danger">No Students Enrolled</div>
+    </div>
+  </div>
+</div>

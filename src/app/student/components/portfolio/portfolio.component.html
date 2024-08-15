@@ -1,0 +1,112 @@
+<div class="container mt-5">
+  <div class="h4 text-success">Student Portfolio <img src="assets/portfolio.png" alt="portfolio"></div>
+  <hr />
+</div>
+
+<div class="container mt-5">
+  <!-- Education Table -->
+  <h4 class="text-success">Education</h4>
+  <table *ngIf="educationRecords && educationRecords.length > 0" class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Education</th>
+        <th>School</th>
+        <th>Year</th>
+        <th>Action</th> <!-- Add Action column -->
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let record of educationRecords; let i = index">
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td>{{ record.education }}</td>
+          <td>{{ record.school }}</td>
+          <td>{{ record.year }}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              (click)="confirmDelete(record, 'education')"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <div *ngIf="educationRecords && educationRecords.length === 0" class="text-muted">No education records found.</div>
+
+  <!-- Skills Table -->
+  <h4 class="text-success mt-5">Skills</h4>
+  <table *ngIf="skillsRecords && skillsRecords.length > 0" class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Skills</th>
+        <th>Proficiency</th>
+        <th>Action</th> <!-- Add Action column -->
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let record of skillsRecords; let i = index">
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td>{{ record.skills }}</td>
+          <td>{{ record.proficiency }}</td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              (click)="confirmDelete(record, 'skills')"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <div *ngIf="skillsRecords && skillsRecords.length === 0" class="text-muted">No skills records found.</div>
+
+  <!-- Edit Portfolio Section Card -->
+  <div class="card mt-5 mb-5">
+    <div class="card-body">
+      <h2 class="card-title text-center">Edit Portfolio</h2>
+      <!-- Form for inserting education -->
+      <form #educationForm="ngForm" (ngSubmit)="updateEducation()">
+        <div class="mb-3">
+          <label for="education" class="form-label">Education</label>
+          <textarea class="form-control form-control-sm resize-none" id="education" name="education" [(ngModel)]="education" rows="2" placeholder="Education Attained" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="school" class="form-label">School</label>
+          <textarea class="form-control form-control-sm resize-none" id="school" name="school" [(ngModel)]="school" rows="2" placeholder="School Graduated" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="year" class="form-label">Year</label>
+          <input type="text" class="form-control form-control-sm resize-none" id="year" name="year" [(ngModel)]="year" placeholder="Year Graduated" required />
+        </div>
+        <!-- Button for saving education -->
+        <button type="submit" class="btn btn-outline-success w-100">Save</button>
+      </form>
+
+      <hr>
+
+      <!-- Form for inserting skills -->
+      <form #skillsForm="ngForm" (ngSubmit)="updateSkills()">
+        <div class="mb-3">
+          <label for="skills" class="form-label">Skills</label>
+          <textarea class="form-control form-control-sm resize-none" id="skills" name="skills" [(ngModel)]="skills" rows="2" placeholder="Skills" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="proficiency" class="form-label">Proficiency</label>
+          <textarea class="form-control form-control-sm resize-none" id="proficiency" name="proficiency" [(ngModel)]="proficiency" rows="2" placeholder="Skill Proficiency" required></textarea>
+        </div>
+        <!-- Button for saving skills -->
+        <button type="submit" class="btn btn-outline-success w-100 mt-3">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
